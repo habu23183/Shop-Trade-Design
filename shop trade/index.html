@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+<script src="js/product.js"></script>
+
+<body onload="filterSelection('all');">
+    <div class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <div class="box">
+                    <span class="long-line"></span>
+                    <span class="short-line"></span>
+
+                </div>
+            </a>
+            <ul class="nav-list">
+                <div class="cross">
+                    <div class="close">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <li>
+                    <a href="#" class="drop-down">
+                        <span>Shop</span>
+                        <div class="angleDown">
+                            <span></span>
+                            <span></span>
+
+                        </div>
+                    </a>
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Stores</a></li>
+                <li><a href="#">Contact Us</a></li>
+
+            </ul>
+            <div class="icons">
+                <a href="#" class="search">
+                    <span>Search</span>
+                    <img src="img/search.png" alt="">
+                </a>
+                <a href="#" class="user"> <img src="img/user.png" alt=""></a>
+                <span class="cart" id="cartClick">
+                    <img src="img/cart.png" alt="">
+                    <span class="count">0</span>
+                </span>
+                <div class="menu">
+                    <i class="fas fa-bars"> </i>
+                </div>
+            </div>
+            <div class="cart-list">
+
+                <div class="cart-top">
+                    <h3>Your Cart</h3>
+                    <div class="cross">
+                        <div class="close" id="cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="cart-products" id="cart-list-pdt">
+
+                    <!-- <li class="cart-li">
+                        <div class="close close-btn">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="img">
+                            <img src="img/Sweater_0.webp" alt="">
+                        </div>
+                        <div class="box">
+                            <p>Apple MacBook Pro with Apple M1 Chip</p>
+                            <div class="cart-flex">
+                                <p class="cart-size">Size : <span></span></p>
+                                <div class="count">
+                                    <button>-</button>
+                                    <input id="count-input" type="text">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cost">
+                            <h4>$3.399</h4>
+                        </div>
+                    </li>
+                    <li class="cart-li">
+                        <div class="close close-btn">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="img">
+                            <img src="img/Sweater_0.webp" alt="">
+                        </div>
+                        <div class="box">
+                            <p>Apple MacBook Pro with Apple M1 Chip</p>
+                            <div class="cart-flex">
+                                <p class="cart-size">Size : <span></span></p>
+                                <div class="count">
+                                    <button>-</button>
+                                    <input id="count-input" type="text">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cost">
+                            <h4>$3.399</h4>
+                        </div>
+                    </li> -->
+
+                </ul>
+                <div class="cart-footer">
+                    <button>View Cart</button>
+
+                </div>
+            </div>
+        </nav>
+
+    </div>
+    <div class="sub-header">
+        <p>Invite friends to Big Fashion Festival & get up to $150 MynCash for every person who visits</p>
+        <a href="#">Invite Now</a>
+    </div>
+    <div class="breadcrumb-nav">
+        <a href="#">Home /</a> <a href="#">Clothing /</a> <a href="#">Men Clothing /</a> <span>All Men Clothing</span>
+    </div>
+    <div class="products">
+        <h2>All Products</h2>
+        <span>(<span id="num">25</span> Products)</span>
+
+    </div>
+    <div class="filter">
+        <div class="col1">
+            <span>FILTERS :</span>
+            <a href="#" class="filter-item btn active" token="all" onclick="filterSelection('all');">All Products</a>
+            <a href="#" class="filter-item btn" token="T-shirt" onclick="filterSelection('T-shirt');">T-shirt</a>
+            <a href="#" class="filter-item btn" token="jacket" onclick="filterSelection('jacket');">Jacket</a>
+            <a href="#" class="filter-item btn" token="Denim" onclick="filterSelection('Denim');">Denim</a>
+            <a href="#" class="filter-item btn" token="nnn" onclick="filterSelection('nnn');">Shirts</a>
+            <a href="#" class="filter-item btn" token="Sweatshirts" onclick="filterSelection('Sweatshirts');">Sweatshirts</a>
+            <a href="#" class="filter-item btn" token="Polo" onclick="filterSelection('Polo');">Polo T - Shirts</a>
+
+        </div>
+        <div class="col2">
+            <div id="select">
+                <p>Sort By: <span id="select-text">Price Low To High</span></p>
+                <i class="fas fa-caret-down"> </i>
+                <ul id="list">
+                    <li class="options" token="low" onclick="price_sorting(this);">Low To High</li>
+                    <li class="options" token="high" onclick="price_sorting(this);"> High To Low</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-grid" id="product-list">
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
